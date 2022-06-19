@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<users>
+	<user id="100">
+		<firstName>Dake</firstName>
+		<lastName>Barkston</lastName>
+		<age>34</age>
+		<role>ADMIN</role>
+	</user>
+	<user id="102">
+		<firstName>John</firstName>
+		<lastName>Bush</lastName>
+		<age>37</age>
+		<role>ADMIN</role>
+	</user>
+	<user id="103">
+		<firstName>Uma</firstName>
+		<lastName>Larman</lastName>
+		<age>17</age>
+		<role>MANAGER</role>
+	</user>
+	<user id="104">
+		<firstName>Richard</firstName>
+		<lastName>Lancaster</lastName>
+		<age>20</age>
+		<role>MANAGER</role>
+	</user>
+	<user id="105">
+		<firstName>Diana</firstName>
+		<lastName>Rafael</lastName>
+		<age>29</age>
+		<role>MANAGER</role>
+	</user>
+	<user id="106">
+		<firstName>Ommar</firstName>
+		<lastName>Virman</lastName>
+		<age>33</age>
+		<role>USER</role>
+	</user>
+	<user id="107">
+		<firstName>Lloyd</firstName>
+		<lastName>Barns</lastName>
+		<age>27</age>
+		<role>USER</role>
+	</user>
+	<user id="108">
+		<firstName>Natlia</firstName>
+		<lastName>Boris</lastName>
+		<age>26</age>
+		<role>USER</role>
+	</user>
+	<user id="109">
+		<firstName>Rick</firstName>
+		<lastName>Neiman</lastName>
+		<age>24</age>
+		<role>USER</role>
+	</user>
+	<user id="110">
+		<firstName>Thomas</firstName>
+		<lastName>Newman</lastName>
+		<age>19</age>
+		<role>USER</role>
+	</user>
+	<user id="111">
+		<firstName>Harvy</firstName>
+		<lastName>Spenser</lastName>
+		<age>35</age>
+		<role>USER</role>
+	</user>
+	<user id="112">
+		<firstName>Maria</firstName>
+		<lastName>Julliano</lastName>
+		<age>19</age>
+		<role>USER</role>
+	</user>
+</users>

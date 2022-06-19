@@ -1,0 +1,8 @@
+out/
+target/
+*.class
+*.jar
+.classpath
+.project
+.settings
+.idea/
