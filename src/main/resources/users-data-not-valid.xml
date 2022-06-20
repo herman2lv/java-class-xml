@@ -3,32 +3,31 @@
 	<user id="101">
 		<firstName>Dake</firstName>
 		<lastName>Barkston</lastName>
-		<age>34</age>
+		<age>134</age>
 		<role>ADMIN</role>
 	</user>
 	<user id="102">
 		<firstName>John</firstName>
 		<lastName>Bush</lastName>
 		<age>37</age>
-		<role>ADMIN</role>
+		<role>ADMINS</role>
 	</user>
 	<user id="103">
 		<firstName>Uma</firstName>
+		<middleName>Gabriel</middleName>
 		<lastName>Larman</lastName>
 		<age>17</age>
 		<role>MANAGER</role>
 	</user>
 	<user id="104">
-		<firstName>Richard</firstName>
-		<lastName>Lancaster</lastName>
 		<age>20</age>
 		<role>MANAGER</role>
 	</user>
 	<user id="105">
-		<firstName>Diana</firstName>
 		<lastName>Rafael</lastName>
-		<age>29</age>
+		<firstName>Diana</firstName>
 		<role>MANAGER</role>
+		<age>29</age>
 	</user>
 	<user id="106">
 		<firstName>Ommar</firstName>
