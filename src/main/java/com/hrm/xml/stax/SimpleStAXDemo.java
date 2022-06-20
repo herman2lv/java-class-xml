@@ -13,7 +13,7 @@ import javax.xml.stream.XMLStreamWriter;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
-import com.hrm.xml.App;
+import com.hrm.xml.Data;
 import com.hrm.xml.User;
 
 public class SimpleStAXDemo {
@@ -26,13 +26,15 @@ public class SimpleStAXDemo {
         XMLOutputFactory factory = XMLOutputFactory.newInstance();
         XMLStreamWriter writer = factory.createXMLStreamWriter(System.out);
         writer.writeStartDocument();
-        writer.writeStartElement("User");
+        writer.writeStartElement("users");
+        writer.writeStartElement("user");
         writer.writeAttribute("id", "1");
         writer.writeStartElement("firstName");
         writer.writeCharacters("Johny");
         writer.writeEndElement();
         writer.writeStartElement("lastName");
-        writer.writeCharacters("Jonnson");
+        writer.writeCharacters("Johnnson");
+        writer.writeEndElement();
         writer.writeEndElement();
         writer.writeEndElement();
         writer.writeEndDocument();
@@ -41,7 +43,7 @@ public class SimpleStAXDemo {
     }
 
     private static void read() throws XMLStreamException {
-        StringReader in = new StringReader(App.simpleUsersXml);
+        StringReader in = new StringReader(Data.simpleUsersXml);
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
         XMLEventReader reader = factory.createXMLEventReader(in);
@@ -68,7 +70,7 @@ public class SimpleStAXDemo {
                 }
             }
         }
-        
+
         users.forEach(System.out::println);
 
     }

@@ -48,10 +48,7 @@ public class DOMWriter {
         }
     }
 
-//    private void processUser(Document document, User user) {
-//        Element root = document.createElement("users");
-//        document.appendChild(root);
-//
+//    private void serializeUser(Document document, User user, Element root) {
 //        Element userElm = document.createElement("user");
 //        root.appendChild(userElm);
 //        userElm.setAttribute("id", String.valueOf(user.getId()));

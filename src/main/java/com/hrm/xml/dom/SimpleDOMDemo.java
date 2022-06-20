@@ -20,13 +20,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.hrm.xml.App;
+import com.hrm.xml.Data;
 import com.hrm.xml.User;
 
 public class SimpleDOMDemo {
     public static void main(String[] args) throws Exception {
         read();
-        write();
+//        write();
     }
     
     private static void write() throws Exception {
@@ -53,11 +53,10 @@ public class SimpleDOMDemo {
         Transformer transformer = tFactory.newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.transform(new DOMSource(document), new StreamResult(System.out));
-        
     }
 
     private static void read() throws ParserConfigurationException, SAXException, IOException {
-        InputStream is = new ByteArrayInputStream(App.simpleUsersXml.getBytes());
+        InputStream is = new ByteArrayInputStream(Data.simpleUsersXml.getBytes());
         
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -65,7 +64,9 @@ public class SimpleDOMDemo {
 
         List<User> users = new ArrayList<>();
         Element root = document.getDocumentElement();
-        NodeList nodes = root.getChildNodes();
+//        NodeList nodes = root.getChildNodes();
+//        System.out.println(nodes.getLength());
+        NodeList nodes = root.getElementsByTagName("user");
         for (int i = 0; i < nodes.getLength(); i++) {
             Element userElm = (Element) nodes.item(i);
             User user = new User();

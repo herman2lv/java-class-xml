@@ -27,7 +27,7 @@ public class DOMDemo {
         }
         
         //write
-        try (OutputStream out = new FileOutputStream("out/dom-users.xml")) {
+        try (OutputStream out = new FileOutputStream("out/users-dom.xml")) {
             List<User> users = repository.getAll();
             Document doc = writer.createDocument(users);
             writer.serialize(doc, out, true);

@@ -18,12 +18,12 @@ public class StAXDemo {
     
     public static void main(String[] args) throws IOException {
         //write
-        try (OutputStream out = new FileOutputStream("out/users.xml")) {
+        try (OutputStream out = new FileOutputStream("out/users-stax.xml")) {
             List<User> users = repo.getAll();
             xmlWriter.serialize(users, out);
         }
         
-        //read
+//        //read
         try (InputStream in = new FileInputStream("src/main/resources/users-data.xml")) {
             List<User> users = xmlReader.deserialize(in);
             users.forEach(System.out::println);
