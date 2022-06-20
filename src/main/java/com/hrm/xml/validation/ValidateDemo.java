@@ -1,4 +1,4 @@
-package com.hrm.xml.validate;
+package com.hrm.xml.validation;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
