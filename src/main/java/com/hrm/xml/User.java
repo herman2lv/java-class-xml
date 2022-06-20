@@ -1,12 +1,18 @@
 package com.hrm.xml;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name = "user")
+@XmlType(propOrder = {"id", "firstName", "lastName", "age", "role"})
 public class User {
     private Long id;
     private String firstName;
     private String lastName;
     private Integer age;
     private Role role;
-
+    
     public enum Role {
         ADMIN, MANAGER, USER
     }
@@ -23,6 +29,7 @@ public class User {
         this.role = role;
     }
 
+    @XmlAttribute
     public Long getId() {
         return id;
     }
