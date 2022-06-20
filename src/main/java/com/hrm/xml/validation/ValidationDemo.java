@@ -11,7 +11,7 @@ import javax.xml.validation.Validator;
 
 import org.xml.sax.SAXException;
 
-public class ValidateDemo {
+public class ValidationDemo {
     public static void main(String[] args) throws FileNotFoundException, IOException, SAXException {
             SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(new StreamSource("src/main/resources/usersSchema.xsd"));
