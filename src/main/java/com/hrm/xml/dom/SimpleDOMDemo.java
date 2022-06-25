@@ -26,7 +26,7 @@ import com.hrm.xml.User;
 public class SimpleDOMDemo {
     public static void main(String[] args) throws Exception {
         read();
-//        write();
+        write();
     }
     
     private static void write() throws Exception {
