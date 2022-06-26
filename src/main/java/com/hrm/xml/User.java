@@ -10,7 +10,7 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
-    private Integer age;
+    private Byte age;
     private Role role;
     
     public enum Role {
@@ -20,7 +20,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName, Integer age, Role role) {
+    public User(Long id, String firstName, String lastName, Byte age, Role role) {
         super();
         this.id = id;
         this.firstName = firstName;
@@ -54,11 +54,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
+    public Byte getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(Byte age) {
         this.age = age;
     }
 

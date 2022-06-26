@@ -93,10 +93,10 @@ public class DOMReader {
         return role;
     }
 
-    private Integer getAge(Element userElm) {
+    private Byte getAge(Element userElm) {
         Element ageElm = getElement(userElm, "age");
         String rawAge = ageElm.getTextContent();
-        Integer age = Integer.parseInt(rawAge);
+        Byte age = Byte.parseByte(rawAge);
         return age;
     }
 

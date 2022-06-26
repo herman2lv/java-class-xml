@@ -11,18 +11,18 @@ public class UserRepositoryInMemory implements UserRepository {
 
     private static final Map<Long, User> data = new HashMap<>();
     static {
-        data.put(1L, new User(1L, "Mike", "Johnson", 23, Role.ADMIN));
-        data.put(2L, new User(2L, "Nick", "Nixon", 55, Role.ADMIN));
-        data.put(3L, new User(3L, "Tim", "Carter", 47, Role.MANAGER));
-        data.put(4L, new User(4L, "Jake", "Manchester", 19, Role.MANAGER));
-        data.put(5L, new User(5L, "Linda", "White", 18, Role.MANAGER));
-        data.put(6L, new User(6L, "Mark", "Smith", 35, Role.USER));
-        data.put(7L, new User(7L, "Andrew", "Redstone", 27, Role.USER));
-        data.put(8L, new User(8L, "Mary", "Black", 29, Role.USER));
-        data.put(9L, new User(9L, "Sirena", "Webber", 31, Role.USER));
-        data.put(10L, new User(10L, "Richard", "Trotskiy", 23, Role.USER));
-        data.put(11L, new User(11L, "Elizabeth", "Hesse", 44, Role.USER));
-        data.put(12L, new User(12L, "Ursula", "Mischel", 51, Role.USER));
+        data.put(1L, new User(1L, "Mike", "Johnson", (byte) 23, Role.ADMIN));
+        data.put(2L, new User(2L, "Nick", "Nixon", (byte) 55, Role.ADMIN));
+        data.put(3L, new User(3L, "Tim", "Carter", (byte) 47, Role.MANAGER));
+        data.put(4L, new User(4L, "Jake", "Manchester", (byte) 19, Role.MANAGER));
+        data.put(5L, new User(5L, "Linda", "White", (byte) 18, Role.MANAGER));
+        data.put(6L, new User(6L, "Mark", "Smith", (byte) 35, Role.USER));
+        data.put(7L, new User(7L, "Andrew", "Redstone", (byte) 27, Role.USER));
+        data.put(8L, new User(8L, "Mary", "Black", (byte) 29, Role.USER));
+        data.put(9L, new User(9L, "Sirena", "Webber", (byte) 31, Role.USER));
+        data.put(10L, new User(10L, "Richard", "Trotskiy", (byte) 23, Role.USER));
+        data.put(11L, new User(11L, "Elizabeth", "Hesse", (byte) 44, Role.USER));
+        data.put(12L, new User(12L, "Ursula", "Mischel", (byte) 51, Role.USER));
     }
 
     @Override

@@ -50,7 +50,7 @@ public class StAXDeserializer {
 
     private void processAge(XMLEventReader reader, User user) throws XMLStreamException {
         String rawData = reader.getElementText();
-        user.setAge(Integer.valueOf(rawData));
+        user.setAge(Byte.valueOf(rawData));
     }
 
     private void processLastName(XMLEventReader reader, User user) throws XMLStreamException {

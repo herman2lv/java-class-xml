@@ -76,7 +76,7 @@ public class SAXUserHandler extends DefaultHandler {
             user.setLastName(content);
             break;
         case "age":
-            Integer age = Integer.parseInt(content);
+            Byte age = Byte.parseByte(content);
             user.setAge(age);
             break;
         case "role":
