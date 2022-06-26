@@ -36,3 +36,9 @@ explain and understand basic Java XML Processing workflow
 * Example of usage of Java API for XML Binding (JAXB) for marshaling and unmarshaling objects to XML
 * Sample container [class](/src/main/java/com/hrm/xml/jaxb/Users.java)
 * Annotated entity [class](/src/main/java/com/hrm/xml/User.java)
+
+### Jackson Demo
+[_package: jackson_](/src/main/java/com/hrm/json/jackson/JacksonDemo.java)
+
+* Example of usage of Jackson json object mapper for simple case
+
