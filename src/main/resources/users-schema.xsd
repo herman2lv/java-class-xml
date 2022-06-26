@@ -13,7 +13,7 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:unsignedByte">
                     <xs:minInclusive value="0"/>
-                    <xs:maxExclusive value="130"/>
+                    <xs:maxExclusive value="120"/>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
