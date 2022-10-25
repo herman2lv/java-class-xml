@@ -1,10 +1,11 @@
 package com.hrm.xml.dom;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
+import com.hrm.xml.Data;
+import com.hrm.xml.User;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -14,41 +15,38 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import com.hrm.xml.Data;
-import com.hrm.xml.User;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleDOMDemo {
     public static void main(String[] args) throws Exception {
         read();
         write();
     }
-    
+
     private static void write() throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.newDocument();
-        
+
         Element root = document.createElement("users");
         document.appendChild(root);
-        
+
         Element userElm = document.createElement("user");
         root.appendChild(userElm);
         userElm.setAttribute("id", "25");
-        
+
         Element firstNameElm = document.createElement("firstName");
         userElm.appendChild(firstNameElm);
         firstNameElm.setTextContent("Mike");
-        
+
         Element lastNameElm = document.createElement("lastName");
         userElm.appendChild(lastNameElm);
         lastNameElm.setTextContent("Willis");
-        
+
         TransformerFactory tFactory = TransformerFactory.newInstance();
         Transformer transformer = tFactory.newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -57,7 +55,7 @@ public class SimpleDOMDemo {
 
     private static void read() throws ParserConfigurationException, SAXException, IOException {
         InputStream is = new ByteArrayInputStream(Data.simpleUsersXml.getBytes());
-        
+
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(is);

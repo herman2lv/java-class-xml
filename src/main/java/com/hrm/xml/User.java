@@ -12,10 +12,6 @@ public class User {
     private String lastName;
     private Byte age;
     private Role role;
-    
-    public enum Role {
-        ADMIN, MANAGER, USER
-    }
 
     public User() {
     }
@@ -122,16 +118,17 @@ public class User {
         } else if (!lastName.equals(other.lastName)) {
             return false;
         }
-        if (role != other.role) {
-            return false;
-        }
-        return true;
+        return role == other.role;
     }
 
     @Override
     public String toString() {
         return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", role="
                 + role + "]";
+    }
+
+    public enum Role {
+        ADMIN, MANAGER, USER
     }
 
 }

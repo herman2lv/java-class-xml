@@ -6,5 +6,5 @@ public interface UserRepository {
     User getById(Long id);
 
     List<User> getAll();
-    
+
 }

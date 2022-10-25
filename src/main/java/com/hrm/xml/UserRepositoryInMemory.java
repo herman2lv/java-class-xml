@@ -1,15 +1,16 @@
 package com.hrm.xml;
 
+import com.hrm.xml.User.Role;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.hrm.xml.User.Role;
-
 public class UserRepositoryInMemory implements UserRepository {
 
     private static final Map<Long, User> data = new HashMap<>();
+
     static {
         data.put(1L, new User(1L, "Mike", "Johnson", (byte) 23, Role.ADMIN));
         data.put(2L, new User(2L, "Nick", "Nixon", (byte) 55, Role.ADMIN));

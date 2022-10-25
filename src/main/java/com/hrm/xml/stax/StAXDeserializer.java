@@ -1,8 +1,7 @@
 package com.hrm.xml.stax;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
+import com.hrm.xml.User;
+import com.hrm.xml.User.Role;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
@@ -10,9 +9,9 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
-
-import com.hrm.xml.User;
-import com.hrm.xml.User.Role;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StAXDeserializer {
     public List<User> deserialize(InputStream in) {
@@ -28,11 +27,11 @@ public class StAXDeserializer {
                     StartElement start = event.asStartElement();
                     String elementName = start.getName().getLocalPart();
                     switch (elementName) {
-                    case "user" -> user = processUser(start, users);
-                    case "firstName" -> processFirstName(reader, user);
-                    case "lastName" -> processLastName(reader, user);
-                    case "age" -> processAge(reader, user);
-                    case "role" -> processRole(reader, user);
+                        case "user" -> user = processUser(start, users);
+                        case "firstName" -> processFirstName(reader, user);
+                        case "lastName" -> processLastName(reader, user);
+                        case "age" -> processAge(reader, user);
+                        case "role" -> processRole(reader, user);
                     }
                 }
             }

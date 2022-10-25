@@ -1,24 +1,22 @@
 package com.hrm.xml.dom;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
+import com.hrm.xml.User;
+import com.hrm.xml.User.Role;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.hrm.xml.User;
-import com.hrm.xml.User.Role;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DOMReader {
-    
+
     public List<User> deserialize(InputStream in) {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -35,13 +33,13 @@ public class DOMReader {
                 User user = processUserElement(userElm);
                 users.add(user);
             }
-            
+
             return users;
         } catch (ParserConfigurationException | SAXException | IOException e) {
             throw new RuntimeException(e);
         }
     }
-    
+
     //Before refactoring
 //    private User processUserElement(Element userElm) {
 //        User user = new User();
@@ -57,20 +55,20 @@ public class DOMReader {
 //        Element lastNameElm = getElement(userElm, "lastName");
 //        String lastName = lastNameElm.getTextContent();
 //        user.setFirstName(lastName);
-//        
+//
 //        Element ageElm = getElement(userElm, "age");
 //        String rawAge = ageElm.getTextContent();
 //        Integer age = Integer.parseInt(rawAge);
 //        user.setAge(age);
-//        
+//
 //        Element roleElm = getElement(userElm, "role");
 //        String rawRole = roleElm.getTextContent();
 //        Role role = Role.valueOf(rawRole);
 //        user.setRole(role);
-//        
+//
 //        return user;
 //    }
-    
+
     private Element getElement(Element parent, String tag) {
         return (Element) parent.getElementsByTagName(tag).item(0);
     }

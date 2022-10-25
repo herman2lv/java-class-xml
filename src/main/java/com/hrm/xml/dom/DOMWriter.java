@@ -1,7 +1,8 @@
 package com.hrm.xml.dom;
 
-import java.io.OutputStream;
-import java.util.List;
+import com.hrm.xml.User;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -10,11 +11,8 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
-import com.hrm.xml.User;
+import java.io.OutputStream;
+import java.util.List;
 
 public class DOMWriter {
     public Document createDocument(List<User> users) {
@@ -60,18 +58,18 @@ public class DOMWriter {
 //        Element lastNameElm = document.createElement("lastName");
 //        userElm.appendChild(lastNameElm);
 //        lastNameElm.setTextContent(user.getLastName());
-//        
+//
 //        Element ageElm = document.createElement("age");
 //        userElm.appendChild(ageElm);
 //        ageElm.setTextContent(String.valueOf(user.getAge()));
-//        
+//
 //        Element roleElm = document.createElement("role");
 //        userElm.appendChild(roleElm);
 //        roleElm.setTextContent(user.getRole().toString());
 //    }
 
     private void serializeUser(Document document, User user, Element root) {
-        Element userElm = createUserElement(document, user, root);
+        Element userElm = createUserElement(document, root);
         processId(user, userElm);
         processFirstName(document, user, userElm);
         processLastName(document, user, userElm);
@@ -107,7 +105,7 @@ public class DOMWriter {
         firstNameElm.setTextContent(user.getFirstName());
     }
 
-    private Element createUserElement(Document document, User user, Element root) {
+    private Element createUserElement(Document document, Element root) {
         Element userElm = document.createElement("user");
         root.appendChild(userElm);
         return userElm;

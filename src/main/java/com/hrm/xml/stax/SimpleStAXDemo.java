@@ -1,8 +1,7 @@
 package com.hrm.xml.stax;
 
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.List;
+import com.hrm.xml.Data;
+import com.hrm.xml.User;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
@@ -12,9 +11,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
-
-import com.hrm.xml.Data;
-import com.hrm.xml.User;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleStAXDemo {
     public static void main(String[] args) throws XMLStreamException {
@@ -56,17 +55,17 @@ public class SimpleStAXDemo {
                 StartElement start = event.asStartElement();
                 String elementName = start.getName().getLocalPart();
                 switch (elementName) {
-                case "user":
-                    user = new User();
-                    users.add(user);
-                    user.setId(Long.parseLong(start.getAttributeByName(new QName("id")).getValue()));
-                    break;
-                case "firstName":
-                    user.setFirstName(reader.getElementText());
-                    break;
-                case "lastName":
-                    user.setLastName(reader.getElementText());
-                    break;
+                    case "user":
+                        user = new User();
+                        users.add(user);
+                        user.setId(Long.parseLong(start.getAttributeByName(new QName("id")).getValue()));
+                        break;
+                    case "firstName":
+                        user.setFirstName(reader.getElementText());
+                        break;
+                    case "lastName":
+                        user.setLastName(reader.getElementText());
+                        break;
                 }
             }
         }
